@@ -7,7 +7,7 @@ import {
 
 import {LocalStorage} from 'src/types/localStorage'
 
-declare var VERSION: string
+window.VERSION = '1'
 
 export const loadLocalStorage = (errorsQueue: any[]): LocalStorage | {} => {
   try {
@@ -69,7 +69,7 @@ export const saveToLocalStorage = ({
       'state',
       JSON.stringify({
         ...appPersisted,
-        VERSION,
+        // VERSION,
         timeRange,
         dashTimeV1,
         dataExplorer,

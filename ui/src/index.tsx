@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 
 import React, {PureComponent} from 'react'
+import {hot} from 'react-hot-loader'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {Router, Route, useRouterHistory} from 'react-router'
@@ -200,6 +201,8 @@ class Root extends PureComponent<{}, State> {
   }
 }
 
+const HotRoot = hot(module)(Root)
+
 if (rootNode) {
-  render(<Root />, rootNode)
+  render(<HotRoot />, rootNode)
 }
